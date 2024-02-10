@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:some_application/screens/queue/queue_screen_viewmodel.dart';
 
 class QueueScreen extends StatelessWidget {
   const QueueScreen({super.key});
@@ -9,10 +11,9 @@ class QueueScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Image.asset(" "),
-            Text(),
-            Text(),
-            TextButton(onPressed: onPressed, child: child)
+            Image.asset( Provider.of<QueueScreenViewModel>(context). ),
+            Text( Provider.of<QueueScreenViewModel>(context). ),
+            Text( Provider.of<QueueScreenViewModel>(context). ),
           ],
         )
       )

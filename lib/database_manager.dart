@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:some_application/entities/screen_data.dart';
 
 class DatabaseManager {
   static SharedPreferences? prefs;
@@ -10,11 +11,7 @@ class DatabaseManager {
     prefs = await SharedPreferences.getInstance();
   }
 
-  static Queue getQueue() {
-    final List<String> queue = prefs!.getStringList("queue") ?? [];
-    return Queue.of(queue);
+  static ScreenData? getNext() {
+    prefs!.get(key)
   }
-
-  static 
-
 }
