@@ -8,15 +8,15 @@ class QueueScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Image.asset( Provider.of<QueueScreenViewModel>(context). ),
-            Text( Provider.of<QueueScreenViewModel>(context). ),
-            Text( Provider.of<QueueScreenViewModel>(context). ),
-          ],
-        )
-      )
-    );
+        body:  Center(
+            child: Column(
+              children: [
+                Image.asset( context.watch<QueueScreenViewModel>().imageAssetPath ),
+                Text( context.watch<QueueScreenViewModel>().mainTitle ),
+                Text( context.watch<QueueScreenViewModel>().subTitle ),
+              ],
+            )
+          ),
+        );
   }
 }

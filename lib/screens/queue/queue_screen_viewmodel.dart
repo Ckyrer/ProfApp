@@ -11,11 +11,18 @@ class QueueScreenViewModel with ChangeNotifier {
   get subTitle => _subTitle;
   get imageAssetPath => _imageAssetPath;
 
-  void nextPage() {
-    final ScreenData? next = DatabaseManager.getNext();
-    _mainTitle = "";
-    _subTitle = "";
-    _imageAssetPath = "";
+  void nextPage() async {
+    final ScreenData? next = await DatabaseManager.readNextData();
+    if (next != null) {
+      _mainTitle = next.title;
+      _subTitle = next.subtitle;
+      _imageAssetPath = next.imageAssetPath;
+    } else {
+      _mainTitle = "";
+      _subTitle = "";
+      _imageAssetPath = "";
+    }
+    
     notifyListeners();
   }
 
